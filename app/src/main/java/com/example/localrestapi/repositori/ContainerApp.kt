@@ -12,3 +12,10 @@ class DefaultAppContainer: ContainerApp{
     val logging = HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY
     }
+class DefaultContaienrApp : ContainerApp {
+
+    private val baseurl = "http://10.0.2.2/umyti/"
+
+}
+
+}
