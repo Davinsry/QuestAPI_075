@@ -1,9 +1,11 @@
 package com.example.localrestapi.modeldata
 
+import kotlinx.serialization.Serializable
+
 @Serializable
 data class DataSiswa(
     val id : Int,
-    val nama : string,
+    val nama : String,
     val alamat : String,
     val telpon : String
 )
@@ -11,3 +13,4 @@ data class DataSiswa(
 data class UiStatteSiswa(
     val detailSiswa: DataSiswa = DataSiswa(),
     val isEntryValid: Boolean = false
+)
