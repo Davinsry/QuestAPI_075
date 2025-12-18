@@ -7,12 +7,14 @@ plugins {
 
 android {
     namespace = "com.example.localrestapi"
-    compileSdk = 35
+    // PERUBAHAN UTAMA: Diubah ke 36 agar cocok dengan library terbaru
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.localrestapi"
         minSdk = 27
-        targetSdk = 35
+        // OPTIONAL: Target disarankan ikut naik ke 36, tapi 35 juga boleh
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
@@ -45,7 +47,7 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
 
-    // Compose BOM (INI KUNCI)
+    // Compose BOM
     implementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(platform(libs.androidx.compose.bom))
 

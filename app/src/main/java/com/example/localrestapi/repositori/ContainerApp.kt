@@ -14,7 +14,9 @@ interface ContainerApp{
 }
 
 class DefaultContainerrApp : ContainerApp{
-    private val baseurl = "http://10.0.2.2/questapi/"
+    private val baseurl = "http://192.168.18.15/questapi/"
+
+
 
     val logging = HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY
@@ -31,6 +33,7 @@ class DefaultContainerrApp : ContainerApp{
                 ignoreUnknownKeys = true
                 prettyPrint = true
                 isLenient = true
+                coerceInputValues = true
             }.asConverterFactory("application/json".toMediaType())
         )
         .client(klien)

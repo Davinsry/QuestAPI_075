@@ -15,7 +15,8 @@ import com.example.localrestapi.view.HomeScreen
 
 @Composable
 fun DataSiswaApp(navController: NavHostController = rememberNavController(), modifier: Modifier){
-    HostNavigasi(navController = navController)
+    // PERBAIKAN 1: Teruskan parameter 'modifier' ke HostNavigasi
+    HostNavigasi(navController = navController, modifier = modifier)
 }
 
 @Composable
@@ -23,7 +24,12 @@ fun HostNavigasi(
     navController: NavHostController,
     modifier: Modifier = Modifier
 ){
-    NavHost(navController = navController, startDestination = DestinasiHome.route, modifier = Modifier ){
+    // PERBAIKAN 2: Gunakan parameter 'modifier' di sini, JANGAN pakai 'Modifier' baru
+    NavHost(
+        navController = navController,
+        startDestination = DestinasiHome.route,
+        modifier = modifier // <--- Ubah dari 'Modifier' menjadi 'modifier' (huruf kecil)
+    ){
         composable(DestinasiHome.route) {
             HomeScreen(navigateToItemEntry = { navController.navigate(DestinasiEntry.route) },
                 navigateToItemUpdate = {
@@ -33,6 +39,5 @@ fun HostNavigasi(
         composable(DestinasiEntry.route){
             EntrySiswaScreen(navigateBack = { navController.navigate(DestinasiHome.route) })
         }
-
     }
 }
