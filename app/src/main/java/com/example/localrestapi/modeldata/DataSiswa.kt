@@ -22,7 +22,7 @@ data class DetailSiswa(
     val telepon: String = "",
 )
 
-fun DetailSiswa.toDataSiswa(): DataSiswa = DataSiswa(
+fun DetailSiswa.toSiswa(): DataSiswa = DataSiswa(
     id = id,
     nama = nama,
     alamat = alamat,
