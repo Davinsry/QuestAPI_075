@@ -15,10 +15,8 @@ interface ServiceApiSiswa {
     @POST("insertTM.php") // Pastikan file insertTM.php di htdocs hurufnya juga sama persis
     suspend fun postSiswa(@Body dataSiswa: DataSiswa):retrofit2.Response<Void>
 
-    @GET("baca1Teman.php/{id}")
-    suspend fun getSatuSiswa(
-        @Query("id") id: Int
-    ): DataSiswa
+    @GET("baca1teman.php")
+    suspend fun getSatuSiswa(@Query("id") id: Int): DataSiswa
 
     @PUT("editTM.php/{id}")
     suspend fun editSatuSiswa(
