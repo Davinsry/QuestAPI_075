@@ -14,9 +14,11 @@ import com.example.localrestapi.view.EntrySiswaScreen
 import com.example.localrestapi.view.HomeScreen
 
 @Composable
-fun DataSiswaApp(navController: NavHostController = rememberNavController(), modifier: Modifier){
-    // PERBAIKAN 1: Teruskan parameter 'modifier' ke HostNavigasi
-    HostNavigasi(navController = navController, modifier = modifier)
+fun DataSiswaApp(
+    navController: NavHostController = rememberNavController(),
+    modifier: Modifier
+) {
+    HostNavigasi(navController = navController)
 }
 
 @Composable
